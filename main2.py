@@ -34,15 +34,15 @@ print('\nPodaj liczby: ')
 l1 = int(input('1) '))
 l2 = int(input('2) '))
 l3 = int(input('3) '))
-if l1 > l2:
-    if l1 > l3:
+if l1 >= l2:
+    if l1 >= l3:
         print('Liczba %(l)d jest największa' % {'l': l1})
-    elif l3 > l1:
+    elif l3 >= l1:
         print('Liczba %(l)d jest największa' % {'l': l3})
 else:
-    if l2 > l3:
+    if l2 >= l3:
         print('Liczba %(l)d jest największa' % {'l': l2})
-    elif l3 > l2:
+    elif l3 >= l2:
         print('Liczba %(l)d jest największa' % {'l': l3})
 
 # zadanie 7
