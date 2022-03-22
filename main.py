@@ -48,6 +48,20 @@ else:
     print("Nieprawidlowy operator.")
 
 #zadanie 3
+a = 5
+b = 6
+a += b
+print(a)
+a -= b
+print(a)
+a *= b
+print(a)
+a /= b
+print(a)
+a **= b
+print(a)
+a %= b
+print(a)
 
 #zadanie 4
 import math
