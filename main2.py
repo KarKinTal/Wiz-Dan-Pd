@@ -10,7 +10,7 @@ print(sporty)
 # zadanie 2
 skroty = {'nr': 'numer', 'zw': 'zaraz wracam', 'nwm': 'nie wiem', 'ss': 'screenshot', 'np': 'na przykład'}
 print(skroty)
-
+ 
 # zadanie 3
 gry = {1: 'Gris', 2: 'The binding of Isaac', 3: 'Return of the Obra Dinn', 4: 'Elsword', 5: 'Children of Morta'}
 print(len(gry.keys()))
