@@ -12,7 +12,9 @@ import numpy as np
 # print(zad2_k.dtype)
 
 # # Zadanie 3
-# def zadanie3 (n=3)
-#     return np.array(4, 81, 4)
+# def zadanie3 (n=3):
+#     tab = np.array([2**a for a in range(n*n)])
+#     return tab.reshape((n,n))
 # n = input('Podaj n: ')
 # n = int(n)
+# print(zadanie3(n))
