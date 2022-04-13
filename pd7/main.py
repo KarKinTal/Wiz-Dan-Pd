@@ -18,3 +18,9 @@ import numpy as np
 # n = input('Podaj n: ')
 # n = int(n)
 # print(zadanie3(n))
+
+# # Zadanie 4
+# def zadanie4 (liczba, ilosc):
+#     return np.logspace (1, ilosc, num=ilosc, base=liczba)
+#
+# print(zadanie4(2, 3))
