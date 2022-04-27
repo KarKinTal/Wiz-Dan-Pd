@@ -37,27 +37,27 @@ print(df[df['Plec'] == 'K'].sort_values('Liczba', ascending=False).head(1))
 df = pd.read_csv('zamowienia.csv', header=0, sep=";", decimal='.')
 print(df)
 # listę unikalnych nazwisk sprzedawców (przetwarzając zwróconą pojedynczą kolumnę z DataFrame)
-print(pd.unique(df['Sprzedawca']))
+print(df['Sprzedawca'].unique())
 
 # 5 najwyższych wartości zamówień
-print(df.sort_values(by='Utarg', ascending=False).head(5))
+print(df.sort_values('Utarg', ascending=False).head(5))
 
 # ilość zamówień złożonych przez każdego sprzedawcę
-print(df['Sprzedawca'].value_counts(ascending=False))
+print(df.groupby('Sprzedawca').size())
 
 # sumę zamówień dla każdego kraju
-print(df.where((df['Data zamowienia'] > '20050101') &
-               (df['Data zamowienia'] < '20051231') & (df['Kraj']=='Polska')).count())
+print(df.groupby('Kraj').agg({'Utarg': ['sum']}))
+# print(df.groupby('Kraj').size())
 
 # sumę zamówień dla roku 2005, dla sprzedawców z Polski
-print(df.where((df['Data zamowienia'] > '20040101') &
-               (df['Data zamowienia'] < '20041231') & (df['Utarg'])).mean())
+rok2005 = df[(df['Kraj'] == 'Polska') &(df['Data zamowienia'] >= '2004-01-01') & (df['Data zamowienia'] <= '2004-12-31')]
+print(rok2005)
 
 # średnią kwotę zamówienia w 2004 roku,
-a = df.where((df['Data zamowienia'] > '20040101') & (df['Data zamowienia'] < '20041231') & (df['Utarg'])).mean()
-b = df.where((df['Data zamowienia'] > '20050101') &
-             (df['Data zamowienia'] < '20051231') & (df['Kraj'] == 'Polska')).count()
+
+rok2005 = df[(df['Kraj'] == 'Polska') &(df['Data zamowienia'] >= '2005-01-01') & (df['Data zamowienia'] <= '2005-12-31')]
+print(rok2005)
 
 # zapisz dane za 2004 rok do pliku zamówienia_2004.csv a dane za 2005 do pliku zamówienia_2005.csv
-a.to_csv('plik1.csv', index=False)
-b.to_csv('plik2.csv', index=False)
+rok2004.to_csv('plik1.csv', index=False)
+rok2005.to_csv('plik2.csv', index=False)
