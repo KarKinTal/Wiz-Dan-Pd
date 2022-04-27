@@ -50,12 +50,12 @@ print(df.groupby('Kraj').agg({'Utarg': ['sum']}))
 # print(df.groupby('Kraj').size())
 
 # sumę zamówień dla roku 2005, dla sprzedawców z Polski
-rok2005 = df[(df['Kraj'] == 'Polska') &(df['Data zamowienia'] >= '2004-01-01') & (df['Data zamowienia'] <= '2004-12-31')]
+rok2005 = df[((df['Kraj'] == 'Polska') & (df['Data zamowienia'] >= '2004-01-01') & (df['Data zamowienia'] <= '2004-12-31'))]
 print(rok2005)
 
 # średnią kwotę zamówienia w 2004 roku,
 
-rok2005 = df[(df['Kraj'] == 'Polska') &(df['Data zamowienia'] >= '2005-01-01') & (df['Data zamowienia'] <= '2005-12-31')]
+rok2005 = df[((df['Kraj'] == 'Polska') & (df['Data zamowienia'] >= '2005-01-01') & (df['Data zamowienia'] <= '2005-12-31'))]
 print(rok2005)
 
 # zapisz dane za 2004 rok do pliku zamówienia_2004.csv a dane za 2005 do pliku zamówienia_2005.csv
