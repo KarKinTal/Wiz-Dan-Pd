@@ -29,10 +29,20 @@ plt.show()
 # Wykres kołowy z wartościami % ukazującymi ilość urodzonych
 # chłopców i dziewczynek w ostatnich 5 latach z datasetu.
 zadanie3 = df[(df['Rok'] >= 2012) & (df['Rok'] <= 2017)].groupby('Plec').agg({'Liczba': ['sum']})
+wykres = zadanie3.plot.pie(subplots=True, autopct='%.2f %%', fontsize=20)
+plt.legend()
+plt.show()
 
 
 # Zadanie 4
 # Wyświetl na pomocą wykresu słupkowego ilość złożonych zamówień
 # przez poszczególnych sprzedawców (zbiór danych zamówienia.csv).
+df = pd.read_csv('zamowienia.csv', delimiter=';')
+policzone = df.groupby('Sprzedawca').size()
+policzone.plot.bar()
+plt.ylabel("liczba zamówień")
+plt.subplots_adjust(left=0.1, right=0.9, bottom=0.2, top=0.9)
+plt.title('Ilość zamówień sprzedawców')
+plt.show()
 
 
