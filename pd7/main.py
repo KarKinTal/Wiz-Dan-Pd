@@ -94,4 +94,4 @@ import numpy as np
 #     zadanie9[a] = element
 # 
 # zadanie9 = zadanie9.reshape((5, 5))
-# print(zadanie9)
+# print(zadanie9) 
